@@ -1,6 +1,6 @@
 <?php
 
-namespace Robinncode\Onubadok\Commands;
+namespace Robinncode\CiOnubadok;
 
 use CodeIgniter\CLI\BaseCommand;
 use CodeIgniter\CLI\CLI;
@@ -12,6 +12,8 @@ class OnubadokCommands extends BaseCommand
     protected $name = 'onubadok:generate';
     protected $description = 'Generate Bengali and English files using onubadok command';
 
+    /**
+     */
     public function run(array $params)
     {
         $baseFolder = FCPATH . 'lang';
@@ -47,8 +49,9 @@ class OnubadokCommands extends BaseCommand
      */
     public function generateFilesWithContents($baseFolder, $language): bool
     {
-        $packageFolder = __DIR__ . '/../lang/' . $language . '/';
+        $packageFolder = __DIR__ . '/lang/' . $language . '/';
         $success = 0;
+        $files = [];
 
         // Generate the directory
         helper('filesystem');
@@ -82,17 +85,17 @@ class OnubadokCommands extends BaseCommand
     public function generateController(): bool
     {
         $appFolder = APPPATH . 'Controllers/';
-        $packageFolder = __DIR__ . '/../Controllers/';
+        $packageFolder = __DIR__ . '/Controllers/';
 
         // Read the contents of the package controller file
         $contents = file_get_contents($packageFolder . 'OnubadokController.php');
 
         // Generate the file in the app folder
-        if (write_file($appFolder . 'OnubadokController.php', $contents)) {
-            CLI::write('OnubadokController.php generated successfully!');
+        if (write_file($appFolder . 'Onubadok.php', $contents)) {
+            CLI::write('Onubadok.php generated successfully!');
             return true;
         } else {
-            CLI::error('Unable to generate OnubadokController.php');
+            CLI::error('Unable to generate Onubadok.php');
             return false;
         }
     }
