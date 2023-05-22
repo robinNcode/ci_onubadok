@@ -1,0 +1,19 @@
+{
+    "name": "robinncode/ci_onubadok",
+    "description": "This is a codeigniter composer package for translating your PHP software to other languages, primarily in Bengali.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Robinncode\\CiOnubadok\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "robinNcode",
+            "email": "msmrobin518@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
