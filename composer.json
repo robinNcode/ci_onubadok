@@ -14,6 +14,27 @@
             "email": "msmrobin518@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {}
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+    },
+    "keywords": [
+        "localization",
+        "codeigniter4",
+        "php",
+        "translation",
+        "language"
+    ],
+    "homepage": "https://github.com/robinNcode/ci_onubadok",
+    "repository": "https://github.com/robinNcode/ci_onubadok.git",
+    "support": {
+        "documentation": "not yet",
+        "email": "msmrobin518@gmail.com",
+        "issues": "https://github.com/robinNcode/ci_onubadok/issues"
+    }
 }

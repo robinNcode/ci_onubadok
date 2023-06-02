@@ -18,6 +18,10 @@ class OnubadokCommands extends BaseCommand
     {
         $baseFolder = FCPATH . 'lang';
 
+        $language = array_shift($params);
+
+        dd($language);
+
         // Check if the directory already exists
         if (is_dir($baseFolder)) {
             CLI::error('The directory already exists');

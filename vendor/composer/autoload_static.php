@@ -22,6 +22,7 @@ class ComposerStaticInit0cd2ffa64021eb87a38372415a9123da
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Robinncode\\CiOnubadok\\OnubadokCommands' => __DIR__ . '/../..' . '/src/OnubadokCommands.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

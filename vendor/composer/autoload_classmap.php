@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Robinncode\\CiOnubadok\\OnubadokCommands' => $baseDir . '/src/OnubadokCommands.php',
 );

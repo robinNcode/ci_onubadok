@@ -3,39 +3,39 @@
 
 ### Installation
 ```
-composer require robinncode/onubadok
+composer require robinncode/ci_onubadok
 ```
 
 ### Usage
 - To generate language files run the following command
     ```
-    php artisan onubadok:generate your_language_code
+    php spark onubadok:generate your_language_code
     ```
     #### Example
     ```
-    php artisan onubadok:generate bn
+    php spark onubadok:generate bn
     ```
-    This will generate a necessary files on as `lang/en` and `lang/bn`. Now you can translate the file and save it.
+    This will generate a necessary files on as `app/Language/en` and `app/Language/bn`. Now you can translate the file and save it.
     
 - To publish the Controller file run the following command
     ```
-    php artisan onubadok:publish
+    php spark onubadok:publish
     ```
-    This will publish the controller file to `app/Http/Controllers/OnubadokController.php`. Now you can use the controller to get the translated text.
-    Also append the following line to your `routes/web.php` file
+    This will publish the controller file to `app/Controllers/OnubadokController.php`. Now you can use the controller to get the translated text.
+    Also append the following line to your `app/Config/Routes.php` file
     ```
-    Route::get('/onubadok/change/{lang}', 'OnubadokController@change');
+    $routes->get('onubadok/change/{lang}', 'OnubadokController::change/$1');
     ```
   
-### Usage in blade file
+### Using in views file
 Now run your project then goto your browser and type `http://your_project_url/onubadok/change/your_language_code` to change the language to `your_language_code`. Now you can use the following code to get the translated text.
 ```
-{{ __( 'Your text' ) }}
+<?= lang('your_key') ?>
 ```
 #### Example
 Here is an example of a data table column name. Here `data_table` is the file name and `Name` is the key.
 ```
-{{ __( 'data_table.Name' ) }}
+<?= lang('data_table.Name') ?>
 ```
 
 ### License
